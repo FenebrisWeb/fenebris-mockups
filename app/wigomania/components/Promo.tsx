@@ -34,7 +34,7 @@ export default function Promo() {
       />
 
       <div className="relative mx-auto grid w-full max-w-[1400px] grid-cols-1 items-center gap-10 px-6 py-16 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:py-24">
-        <FadeUp className="flex flex-col items-start gap-5 text-left text-white">
+        <FadeUp className="flex flex-col items-center gap-5 text-center text-white sm:items-start sm:text-left">
           <span className="rounded-full bg-white/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em]">
             Limited Time Offer
           </span>

@@ -5,38 +5,56 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import PatternOverlay from "./PatternOverlay";
 
-const SLIDES = [
+type Slide = {
+  label: string;
+  eyebrow: string;
+  heading: [string, string];
+  copy: string;
+  image: string;
+  alt: string;
+  fit: "cover" | "contain";
+  position?: "bottom";
+  compact?: boolean;
+  flushBottom?: boolean;
+};
+
+const SLIDES: Slide[] = [
   {
     label: "Men's Wig",
     eyebrow: "Premium Hair Solutions for Men",
     heading: ["Confidence", "Redefined"],
     copy: "Natural-looking men's wigs and hair patches, crafted for a seamless, undetectable finish.",
-    image: "https://www.wigomania.com/public/assets/rest/17260560011673517964slide-img-4.webp",
+    image: "/wigomania/menswigs.webp",
     alt: "Men's wig",
+    fit: "contain",
+    flushBottom: true,
   },
   {
     label: "Toppers for Women",
     eyebrow: "Toppers for Women",
     heading: ["Fuller", "Effortlessly"],
     copy: "Clip-on and semi-permanent toppers built to cover thinning at the crown, part, or hairline.",
-    image: "https://www.wigomania.com/public/uploads/bannerimages/topper.webp",
+    image: "/wigomania/toppers-for-women1.png",
     alt: "Toppers for women",
+    fit: "contain",
   },
   {
     label: "Ladies Wigs",
     eyebrow: "Ladies Wigs",
     heading: ["Elegance", "Reimagined"],
     copy: "Premium human-hair wigs designed to move, fall, and feel exactly like your own.",
-    image: "https://www.wigomania.com/public/uploads/bannerimages/ladieswig.webp",
+    image: "/wigomania/women-wigs1.png",
     alt: "Ladies wigs",
+    fit: "contain",
   },
   {
     label: "Hair Extensions",
     eyebrow: "Hair Extensions",
     heading: ["Length", "Reinvented"],
     copy: "Clip-in, weft, and micro-loop extensions for instant length, volume, and versatility.",
-    image: "https://www.wigomania.com/public/assets/rest/17260560921681805521hairextensions.webp",
+    image: "/wigomania/hair-extension1.png",
     alt: "Hair extensions",
+    fit: "contain",
   },
   {
     label: "Cancer Wigs for Women",
@@ -45,6 +63,7 @@ const SLIDES = [
     copy: "Soft, comfortable, natural-looking wigs designed with extra care for sensitive scalps.",
     image: "https://www.wigomania.com/public/uploads/bannerimages/cancerwig.webp",
     alt: "Cancer wigs for women",
+    fit: "cover",
   },
 ];
 
@@ -95,13 +114,9 @@ export default function Hero() {
 
   return (
     <section className="bg-[#fbf7f5] dark:bg-zinc-950">
-      <div className="relative grid w-full grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-0">
+      <div className="relative grid w-full grid-cols-1 items-center gap-2 lg:grid-cols-2 lg:gap-0">
         <div
-          className="relative z-10 flex flex-col items-start justify-center gap-6 px-6 py-16 sm:px-10 sm:py-20 lg:py-24"
-          style={{
-            paddingLeft: "max(1.5rem, calc((100vw - 1400px) / 2 + 1.5rem))",
-            paddingRight: "3rem",
-          }}
+          className="relative z-10 flex flex-col items-center justify-center gap-6 px-6 py-12 text-center sm:items-start sm:px-10 sm:py-20 sm:text-left lg:py-24 lg:pr-12 lg:[padding-left:max(1.5rem,calc((100vw-1400px)/2+1.5rem))]"
         >
           <AnimatePresence mode="wait">
             <motion.div
@@ -110,30 +125,78 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="flex flex-col items-start gap-5 text-left"
+              className="flex flex-col items-center gap-5 text-center sm:items-start sm:text-left"
             >
               <span className="relative overflow-hidden rounded-full bg-[var(--brand)] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-white shadow-sm">
                 <PatternOverlay />
                 <span className="relative">{slide.eyebrow}</span>
               </span>
 
-              <h1 className="font-serif text-5xl leading-[1.05] tracking-tight text-zinc-900 sm:text-6xl lg:text-7xl dark:text-white">
+              <h1 className="font-serif text-2xl leading-[1.05] tracking-tight text-zinc-900 sm:text-6xl lg:text-7xl dark:text-white">
                 {slide.heading[0]}
                 <span className="text-[var(--brand)]">.</span>
-                <br />
+                <span className="sm:hidden"> </span>
+                <br className="hidden sm:block" />
                 {slide.heading[1]}
                 <span className="text-[var(--brand)]">.</span>
               </h1>
 
               <span className="h-1 w-16 rounded-full bg-[var(--brand)]" />
 
-              <p className="max-w-md text-base text-zinc-600 dark:text-zinc-400">
+              <p className="max-w-md text-sm text-zinc-600 sm:text-base dark:text-zinc-400">
                 {slide.copy}
               </p>
             </motion.div>
           </AnimatePresence>
 
-          <div className="mt-2 flex flex-col gap-4 sm:flex-row">
+          {/* Mobile / tablet image card, replaces the desktop full-bleed image below lg */}
+          <div className="relative w-full max-w-sm lg:hidden">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-[#f0ebe7] shadow-lg">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={active}
+                  initial={{ opacity: 0, scale: 1.03 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={slide.image}
+                    alt={slide.alt}
+                    fill
+                    priority={active === 0}
+                    sizes="90vw"
+                    className={
+                      slide.fit === "contain"
+                        ? `object-contain object-bottom ${slide.compact ? "p-8" : "p-3"} ${
+                            slide.flushBottom ? "pb-0" : ""
+                          }`
+                        : slide.position === "bottom"
+                          ? "object-cover object-bottom"
+                          : "object-cover"
+                    }
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            <div className="mt-4 flex items-center justify-center gap-2">
+              {SLIDES.map((s, i) => (
+                <button
+                  key={s.label}
+                  type="button"
+                  onClick={() => setActive(i)}
+                  aria-label={`Show ${s.label} slide`}
+                  className={`h-1.5 rounded-full transition-all ${
+                    i === active ? "w-6 bg-[var(--brand)]" : "w-1.5 bg-zinc-300 dark:bg-white/20"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-2 flex flex-col items-center gap-4 sm:flex-row sm:items-stretch">
             <a
               href="#appointment"
               className="relative flex h-12 items-center justify-center gap-2 overflow-hidden rounded-md bg-[var(--brand)] px-7 text-sm font-semibold uppercase tracking-wide text-white transition-opacity hover:opacity-90"
@@ -152,7 +215,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative aspect-[16/10] w-full overflow-hidden sm:aspect-[16/9] lg:aspect-auto lg:h-full lg:min-h-[520px]">
+        <div className="relative hidden overflow-hidden bg-[#f0ebe7] lg:block lg:aspect-auto lg:h-full lg:min-h-[520px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={active}
@@ -168,7 +231,15 @@ export default function Hero() {
                 fill
                 priority={active === 0}
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover"
+                className={
+                  slide.fit === "contain"
+                    ? `object-contain object-bottom ${slide.compact ? "p-20" : "p-6"} ${
+                        slide.flushBottom ? "pb-0" : ""
+                      }`
+                    : slide.position === "bottom"
+                      ? "object-cover object-bottom"
+                      : "object-cover"
+                }
               />
             </motion.div>
           </AnimatePresence>
@@ -184,7 +255,7 @@ export default function Hero() {
                 setActive((i) => (i - 1 + SLIDES.length) % SLIDES.length);
               }
             }}
-            className="absolute bottom-4 right-4 z-10 flex w-44 cursor-grab flex-col overflow-hidden rounded-xl shadow-xl active:cursor-grabbing sm:bottom-6 sm:right-6 sm:w-52"
+            className="absolute bottom-4 right-4 z-10 flex w-48 cursor-grab flex-col overflow-hidden rounded-xl shadow-xl active:cursor-grabbing sm:bottom-6 sm:right-6 sm:w-64"
           >
             {SLIDES.map((s, i) => (
               <button
@@ -211,7 +282,7 @@ export default function Hero() {
           aria-hidden
           className="pointer-events-none absolute inset-0 opacity-[0.04] [background-image:radial-gradient(currentColor_1px,transparent_1px)] [background-size:20px_20px]"
         />
-        <div className="relative mx-auto grid w-full max-w-[1400px] grid-cols-2 gap-y-10 px-6 py-14 sm:grid-cols-3 lg:grid-cols-6 lg:gap-y-0">
+        <div className="relative mx-auto flex w-full max-w-[1400px] snap-x snap-mandatory gap-8 overflow-x-auto px-6 py-10 sm:grid sm:snap-none sm:grid-cols-3 sm:gap-y-10 sm:overflow-visible sm:py-14 lg:grid-cols-6 lg:gap-y-0">
           {STATS.map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -219,17 +290,17 @@ export default function Hero() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.4, delay: i * 0.06, ease: "easeOut" }}
-              className="group flex flex-col items-center gap-3 border-l border-transparent px-2 text-center first:border-l-0 lg:border-black/5 dark:lg:border-white/10"
+              className="group flex shrink-0 snap-center flex-col items-center gap-3 border-l border-transparent px-2 text-center first:border-l-0 sm:shrink lg:border-black/5 dark:lg:border-white/10"
             >
               <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--brand)]/10 text-[var(--brand)] transition-transform duration-300 group-hover:scale-110 group-hover:bg-[var(--brand)] group-hover:text-white">
                 <svg viewBox="0 0 20 20" fill="none" className="h-6 w-6">
                   <path d={stat.path} stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </span>
-              <span className="text-lg font-semibold text-zinc-900 dark:text-white">
+              <span className="whitespace-nowrap text-lg font-semibold text-zinc-900 dark:text-white">
                 {stat.value}
               </span>
-              <span className="text-xs text-zinc-500 dark:text-zinc-400">
+              <span className="whitespace-nowrap text-xs text-zinc-500 dark:text-zinc-400">
                 {stat.label}
               </span>
             </motion.div>

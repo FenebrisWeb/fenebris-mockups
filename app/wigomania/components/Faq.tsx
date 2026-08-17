@@ -50,7 +50,7 @@ export default function Faq() {
   return (
     <section id="faq" className="bg-[#fbf7f5]">
       <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 gap-12 px-6 py-20 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
-        <FadeUp className="flex flex-col items-start gap-4 lg:sticky lg:top-24 lg:self-start">
+        <FadeUp className="flex flex-col items-center gap-4 text-center sm:items-start sm:text-left lg:sticky lg:top-24 lg:self-start">
           <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--brand)]">
             FAQ
           </span>
@@ -63,12 +63,12 @@ export default function Faq() {
             find what you&apos;re looking for? Our team is one message away.
           </p>
 
-          <div className="relative mt-2 flex w-full max-w-sm items-center gap-4 overflow-hidden rounded-2xl bg-[var(--brand)] p-6 text-white shadow-sm">
+          <div className="relative mt-2 flex w-full max-w-sm flex-col items-center gap-4 overflow-hidden rounded-2xl bg-[var(--brand)] p-6 text-center text-white shadow-sm sm:flex-row sm:text-left">
             <PatternOverlay />
             <span className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/15">
               <MessageCircle className="h-5 w-5" strokeWidth={1.75} />
             </span>
-            <div className="relative flex flex-col gap-2">
+            <div className="relative flex flex-col items-center gap-2 sm:items-start">
               <p className="text-sm font-semibold">Still have questions?</p>
               <a
                 href="#contact"

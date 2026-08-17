@@ -88,13 +88,16 @@ export default function Footer() {
     <footer className="border-t border-black/10">
       {/* Top stats bar */}
       <div className="bg-zinc-950 text-white">
-        <div className="mx-auto flex w-full max-w-[1400px] flex-wrap items-center justify-center gap-x-8 gap-y-4 px-6 py-5 sm:flex-nowrap sm:justify-between lg:divide-x lg:divide-white/10">
+        <div className="mx-auto flex w-full max-w-[1400px] snap-x snap-mandatory gap-x-8 overflow-x-auto px-6 py-5 sm:flex-nowrap sm:snap-none sm:justify-between sm:overflow-visible lg:divide-x lg:divide-white/10">
           {TOP_STATS.map((stat) => {
             const Icon = stat.icon;
             return (
-              <div key={stat.label} className="flex items-center gap-3 px-2 first:pl-0">
+              <div
+                key={stat.label}
+                className="flex shrink-0 snap-center items-center gap-3 px-2 first:pl-0 sm:shrink"
+              >
                 <Icon className="h-6 w-6 shrink-0 text-[var(--brand)]" strokeWidth={1.5} />
-                <div className="flex flex-col leading-tight">
+                <div className="flex flex-col whitespace-nowrap leading-tight">
                   <span className="text-sm font-bold uppercase tracking-wide">{stat.value}</span>
                   <span className="text-xs text-white/60">{stat.label}</span>
                 </div>
@@ -218,14 +221,14 @@ export default function Footer() {
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--brand)]">
               Trusted by Thousands
             </span>
-            <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            <div className="mt-5 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 sm:grid sm:grid-cols-4 sm:snap-none sm:overflow-visible sm:pb-0">
               {TRUST_BADGES.map((badge, i) => {
                 const Icon = badge.icon;
                 return (
                   <FadeUp
                     key={badge.label}
                     delay={i * 0.06}
-                    className="flex flex-col items-start gap-2 rounded-2xl border border-white/10 bg-white/[.03] p-5 transition-colors hover:border-[var(--brand)]/40"
+                    className="flex w-[62vw] max-w-[220px] shrink-0 snap-center flex-col items-start gap-2 rounded-2xl border border-white/10 bg-white/[.03] p-5 transition-colors hover:border-[var(--brand)]/40 sm:w-auto sm:max-w-none sm:shrink"
                   >
                     <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--brand)]/10 text-[var(--brand)]">
                       <Icon className="h-5 w-5" strokeWidth={1.5} />

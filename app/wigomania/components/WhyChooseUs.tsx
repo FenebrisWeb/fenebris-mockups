@@ -52,14 +52,14 @@ export default function WhyChooseUs() {
           </p>
         </FadeUp>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-2 sm:grid sm:grid-cols-2 sm:snap-none sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3">
           {REASONS.map((reason, i) => {
             const Icon = reason.icon;
             return (
               <FadeUp
                 key={reason.title}
                 delay={(i % 3) * 0.08}
-                className="group flex flex-col items-center gap-4 rounded-2xl border border-black/5 bg-white p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="group flex w-[78vw] max-w-xs shrink-0 snap-center flex-col items-center gap-4 rounded-2xl border border-black/5 bg-white p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:w-auto sm:max-w-none sm:shrink"
               >
                 <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[var(--brand)]/10 text-[var(--brand)] transition-colors duration-300 group-hover:bg-[var(--brand)] group-hover:text-white">
                   <Icon className="h-7 w-7" strokeWidth={1.5} />

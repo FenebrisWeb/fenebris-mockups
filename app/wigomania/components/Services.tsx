@@ -50,7 +50,7 @@ export default function Services() {
 
   useEffect(() => {
     const updateWidth = () => {
-      setCardWidth(window.innerWidth < 640 ? 240 : 320);
+      setCardWidth(window.innerWidth < 640 ? window.innerWidth - 48 : 320);
     };
     updateWidth();
     window.addEventListener("resize", updateWidth);

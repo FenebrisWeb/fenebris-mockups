@@ -103,13 +103,13 @@ export default function Forte() {
             Our Forte
           </span>
           <span className="h-6 w-px bg-[var(--brand)]/40" />
-          <p className="whitespace-nowrap text-sm font-medium uppercase tracking-wide text-zinc-500">
+          <p className="text-sm font-medium uppercase tracking-wide text-zinc-500 sm:whitespace-nowrap">
             Wig Shop in Chennai &amp; Hyderabad, Wig-O-Mania
           </p>
-          <h2 className="whitespace-nowrap font-serif text-2xl tracking-tight text-zinc-900 sm:text-3xl">
+          <h2 className="font-serif text-xl tracking-tight text-zinc-900 sm:whitespace-nowrap sm:text-3xl">
             Human Hair Wigs, Hair Toppers &amp; Hair Patch Solutions
           </h2>
-          <p className="whitespace-nowrap font-serif text-3xl tracking-tight text-[var(--brand)] sm:text-4xl">
+          <p className="font-serif text-2xl tracking-tight text-[var(--brand)] sm:whitespace-nowrap sm:text-4xl">
             Wig-O-Mania, One Stop UK Brand Hair Studio in India
           </p>
 
@@ -174,7 +174,7 @@ export default function Forte() {
               className="grid min-h-[420px] shrink-0 grid-cols-1 overflow-hidden rounded-3xl border border-black/5 bg-white shadow-sm sm:grid-cols-2 sm:min-h-[480px]"
               style={{ width: cardWidth }}
             >
-              <div className="relative h-64 w-full sm:h-full">
+              <div className="relative aspect-[4/3] w-full sm:aspect-auto sm:h-full">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -182,11 +182,11 @@ export default function Forte() {
                   draggable={false}
                   loading="eager"
                   sizes="(min-width: 640px) 560px, 90vw"
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
 
-              <div className="flex flex-col items-start justify-center gap-5 p-8 sm:p-14">
+              <div className="flex flex-col items-center justify-center gap-5 p-8 text-center sm:items-start sm:p-14 sm:text-left">
                 <h3 className="font-serif text-2xl uppercase leading-snug tracking-tight text-[var(--brand)] sm:text-3xl">
                   {item.title}
                 </h3>
@@ -194,7 +194,7 @@ export default function Forte() {
                 <p className="max-w-md text-base leading-relaxed text-zinc-600">
                   {item.description}
                 </p>
-                <div className="mt-3 flex flex-wrap gap-4">
+                <div className="mt-3 flex flex-wrap justify-center gap-4 sm:justify-start">
                   <a
                     href="#contact"
                     className="flex h-[52px] items-center justify-center rounded-full bg-[var(--brand)] px-8 text-sm font-semibold text-white shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md"

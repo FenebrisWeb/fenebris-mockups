@@ -175,7 +175,7 @@ export default function Transformations() {
                 </span>
               </div>
 
-              <div className="flex flex-col items-start gap-2 p-5">
+              <div className="flex flex-col items-center gap-2 p-5 text-center sm:items-start sm:text-left">
                 <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-zinc-400">
                   {item.group}
                 </span>
@@ -247,7 +247,7 @@ export default function Transformations() {
                   <path d={stat.path} stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </span>
-              <span className="text-left text-xs font-semibold uppercase tracking-wide text-zinc-700 sm:text-sm">
+              <span className="text-xs font-semibold uppercase tracking-wide text-zinc-700 sm:text-left sm:text-sm">
                 {stat.label}
               </span>
             </div>

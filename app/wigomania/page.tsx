@@ -8,6 +8,7 @@ import Transformations from "./components/Transformations";
 import Forte from "./components/Forte";
 import Reviews from "./components/Reviews";
 import WhyChooseUs from "./components/WhyChooseUs";
+import Glimpse from "./components/Glimpse";
 import Faq from "./components/Faq";
 import Footer from "./components/Footer";
 
@@ -31,6 +32,7 @@ export default function WigomaniaPage() {
         <Reviews />
         <Transformations />
         <WhyChooseUs />
+        <Glimpse />
         <Faq />
       </main>
       <Footer />

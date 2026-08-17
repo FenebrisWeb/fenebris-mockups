@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { Calendar } from "lucide-react";
 import PatternOverlay from "./PatternOverlay";
 
 const NAV_LINKS = [
@@ -74,7 +75,7 @@ export default function Header() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -8, scale: 0.97 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
-                className="absolute right-0 top-full mt-3 w-72 overflow-hidden rounded-2xl border border-black/10 bg-white shadow-2xl dark:border-white/10 dark:bg-zinc-900"
+                className="absolute left-0 top-full mt-3 w-[calc(100vw-3rem)] max-w-xs overflow-hidden rounded-2xl border border-black/10 bg-white shadow-2xl sm:left-auto sm:right-0 sm:w-72 sm:max-w-none dark:border-white/10 dark:bg-zinc-900"
               >
                 <div className="relative overflow-hidden bg-[var(--brand)] px-5 py-4">
                   <div
@@ -128,6 +129,14 @@ export default function Header() {
           >
             <PatternOverlay />
             <span className="relative">Coupon</span>
+          </a>
+          <a
+            href="#appointment"
+            aria-label="Book Consultation"
+            className="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full bg-[var(--brand)] text-white shadow-sm sm:hidden"
+          >
+            <PatternOverlay />
+            <Calendar className="relative h-4 w-4" strokeWidth={1.75} />
           </a>
           <a
             href="tel:+919962831281"
