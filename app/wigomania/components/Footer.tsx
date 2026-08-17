@@ -1,4 +1,5 @@
 import Image from "next/image";
+import FadeUp from "./FadeUp";
 
 const FOOTER_LINKS = [
   {
@@ -38,7 +39,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-black/10 dark:border-white/10">
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
-        <div className="flex flex-col gap-4">
+        <FadeUp className="flex flex-col gap-4">
           <Image
             src="https://www.wigomania.com/public/assets/images/logo-website.webp"
             alt="Wigomania"
@@ -64,10 +65,10 @@ export default function Footer() {
               </a>
             ))}
           </div>
-        </div>
+        </FadeUp>
 
-        {FOOTER_LINKS.map((group) => (
-          <div key={group.heading} className="flex flex-col gap-3">
+        {FOOTER_LINKS.map((group, i) => (
+          <FadeUp key={group.heading} delay={(i + 1) * 0.1} className="flex flex-col gap-3">
             <span className="text-sm font-semibold">{group.heading}</span>
             {group.links.map((link) => (
               <a
@@ -78,7 +79,7 @@ export default function Footer() {
                 {link.label}
               </a>
             ))}
-          </div>
+          </FadeUp>
         ))}
       </div>
 

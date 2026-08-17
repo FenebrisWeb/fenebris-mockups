@@ -1,7 +1,8 @@
 import TopBar from "./components/TopBar";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import About from "./components/About";
+import Promo from "./components/Promo";
+import ContactBar from "./components/ContactBar";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -19,7 +20,8 @@ export default function WigomaniaPage() {
       <Header />
       <main className="flex flex-1 flex-col">
         <Hero />
-        <About />
+        <Promo />
+        <ContactBar />
         <Services />
         <Contact />
       </main>
