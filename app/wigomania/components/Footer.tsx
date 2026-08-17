@@ -1,5 +1,15 @@
 import Image from "next/image";
+import { Users, Award, Gem, ShieldCheck, Handshake, Phone, ChevronRight } from "lucide-react";
+import PatternOverlay from "./PatternOverlay";
 import FadeUp from "./FadeUp";
+
+const STATS = [
+  { label: "Happy Clients", value: "10,000+", icon: Users },
+  { label: "Of Expertise", value: "30+ Years", icon: Award },
+  { label: "Human Hair", value: "100% Premium", icon: Gem },
+  { label: "One Time Investment", value: "No Royalty", icon: ShieldCheck },
+  { label: "We Grow Together", value: "Lifetime Support", icon: Handshake },
+];
 
 const FOOTER_LINKS = [
   {
@@ -38,7 +48,49 @@ const SOCIALS = [
 export default function Footer() {
   return (
     <footer className="border-t border-black/10 dark:border-white/10">
-      <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
+      <div className="bg-zinc-950 text-white">
+        <div className="mx-auto flex w-full max-w-[1400px] flex-wrap items-center justify-center gap-x-8 gap-y-4 px-6 py-5 sm:flex-nowrap sm:justify-between lg:divide-x lg:divide-white/10">
+          {STATS.map((stat) => {
+            const Icon = stat.icon;
+            return (
+              <div key={stat.label} className="flex items-center gap-3 px-2 first:pl-0">
+                <Icon className="h-6 w-6 shrink-0 text-[var(--brand)]" strokeWidth={1.5} />
+                <div className="flex flex-col leading-tight">
+                  <span className="text-sm font-bold uppercase tracking-wide">{stat.value}</span>
+                  <span className="text-xs text-white/60">{stat.label}</span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="relative overflow-hidden bg-[var(--brand)]">
+        <PatternOverlay />
+        <div className="relative mx-auto flex w-full max-w-[1400px] flex-col items-center justify-between gap-4 px-6 py-5 text-white sm:flex-row">
+          <div className="flex items-center gap-4 text-center sm:text-left">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/15">
+              <Phone className="h-5 w-5" strokeWidth={1.75} />
+            </span>
+            <div>
+              <p className="text-base font-semibold">Let&apos;s build success together!</p>
+              <p className="text-sm text-white/80">
+                Enquire today and our team will get in touch with you.
+              </p>
+            </div>
+          </div>
+
+          <a
+            href="#appointment"
+            className="flex h-11 shrink-0 items-center gap-1.5 rounded-full border-2 border-white px-6 text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-white hover:text-[var(--brand)]"
+          >
+            Enquire Now
+            <ChevronRight className="h-4 w-4" strokeWidth={2} />
+          </a>
+        </div>
+      </div>
+
+      <div className="mx-auto grid w-full max-w-[1400px] gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
         <FadeUp className="flex flex-col gap-4">
           <Image
             src="https://www.wigomania.com/public/assets/images/logo-website.webp"

@@ -49,7 +49,7 @@ export default function Faq() {
 
   return (
     <section id="faq" className="bg-[#fbf7f5]">
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-12 px-6 py-20 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+      <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 gap-12 px-6 py-20 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
         <FadeUp className="flex flex-col items-start gap-4 lg:sticky lg:top-24 lg:self-start">
           <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--brand)]">
             FAQ

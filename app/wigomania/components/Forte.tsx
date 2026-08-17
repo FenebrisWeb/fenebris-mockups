@@ -97,7 +97,7 @@ export default function Forte() {
 
   return (
     <section id="our-forte" className="overflow-hidden bg-[#fbf7f5]">
-      <div className="mx-auto w-full max-w-6xl px-6 py-20">
+      <div className="mx-auto w-full max-w-[1400px] px-6 py-20">
         <FadeUp className="mx-auto flex max-w-5xl flex-col items-center gap-3 text-center">
           <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--brand)]">
             Our Forte

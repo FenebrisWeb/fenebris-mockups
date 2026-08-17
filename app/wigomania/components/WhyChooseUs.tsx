@@ -37,7 +37,7 @@ const REASONS = [
 export default function WhyChooseUs() {
   return (
     <section className="bg-[#fbf7f5]">
-      <div className="mx-auto w-full max-w-6xl px-6 py-20">
+      <div className="mx-auto w-full max-w-[1400px] px-6 py-20">
         <FadeUp className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
           <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--brand)]">
             Why Choose Us

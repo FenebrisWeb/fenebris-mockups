@@ -98,7 +98,7 @@ export default function Transformations() {
 
   return (
     <section className="overflow-hidden bg-[#fbf7f5]">
-      <div className="mx-auto w-full max-w-6xl px-6 py-20">
+      <div className="mx-auto w-full max-w-[1400px] px-6 py-20">
         <FadeUp className="mx-auto flex max-w-xl flex-col items-center gap-3 text-center">
           <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--brand)]">
             Transformations
@@ -233,7 +233,7 @@ export default function Transformations() {
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-6xl px-6 pb-20 pt-4">
+      <div className="mx-auto w-full max-w-[1400px] px-6 pb-20 pt-4">
         <FadeUp className="grid grid-cols-2 gap-6 rounded-2xl border border-black/5 bg-white px-6 py-6 sm:grid-cols-4">
           {[
             { label: "30+ Years of Expertise", path: "M10 2 3 5v5c0 4.4 3 8.4 7 9.5 4-1.1 7-5.1 7-9.5V5l-7-3Z" },
