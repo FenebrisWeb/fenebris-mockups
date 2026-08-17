@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 const BRANDS = [
   { name: "Yogyashree", href: "/yogyashree" },
   { name: "SMV Fitness", href: "/smv-fitness" },
+  { name: "Wigomania", href: "/wigomania" },
 ];
 
 function highlight(name: string, query: string) {

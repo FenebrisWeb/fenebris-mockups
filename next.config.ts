@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "fenebrisindia.com",
       },
+      {
+        protocol: "https",
+        hostname: "www.wigomania.com",
+      },
     ],
   },
 };
