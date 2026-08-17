@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import Promo from "./components/Promo";
 import ContactBar from "./components/ContactBar";
 import Services from "./components/Services";
+import Transformations from "./components/Transformations";
 import Forte from "./components/Forte";
 import Reviews from "./components/Reviews";
 import Contact from "./components/Contact";
@@ -27,6 +28,7 @@ export default function WigomaniaPage() {
         <Services />
         <Forte />
         <Reviews />
+        <Transformations />
         <Contact />
       </main>
       <Footer />
