@@ -8,7 +8,7 @@ import Transformations from "./components/Transformations";
 import Forte from "./components/Forte";
 import Reviews from "./components/Reviews";
 import WhyChooseUs from "./components/WhyChooseUs";
-import Contact from "./components/Contact";
+import Faq from "./components/Faq";
 import Footer from "./components/Footer";
 
 // Wigomania brand color. Scoped to this page only, keep it out of shared files.
@@ -31,7 +31,7 @@ export default function WigomaniaPage() {
         <Reviews />
         <Transformations />
         <WhyChooseUs />
-        <Contact />
+        <Faq />
       </main>
       <Footer />
     </div>

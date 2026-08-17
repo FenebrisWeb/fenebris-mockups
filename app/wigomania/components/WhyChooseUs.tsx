@@ -76,15 +76,6 @@ export default function WhyChooseUs() {
           })}
         </div>
       </div>
-
-      <div className="relative overflow-hidden bg-gradient-to-r from-[var(--brand)]/5 via-[var(--brand)]/10 to-[var(--brand)]/5 py-12 text-center">
-        <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-[var(--brand)]/30 font-serif text-2xl text-[var(--brand)]">
-          W
-        </span>
-        <p className="mt-3 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--brand)]">
-          Confidence. Our Passion.
-        </p>
-      </div>
     </section>
   );
 }
