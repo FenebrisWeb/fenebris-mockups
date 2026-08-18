@@ -11,6 +11,7 @@ const BRANDS = [
   { name: "Yogyashree", href: "/yogyashree" },
   { name: "SMV Fitness", href: "/smv-fitness" },
   { name: "Wigomania", href: "/wigomania" },
+  { name: "Unitattva", href: "/unitattva" },
 ];
 
 function highlight(name: string, query: string) {
