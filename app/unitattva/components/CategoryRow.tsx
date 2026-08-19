@@ -25,9 +25,9 @@ const BLOB_RADII = [
 ];
 
 const CIRCLE_SIZE = 104;
-const GAP = 24;
+const GAP = 16;
 const VISIBLE_ON_DESKTOP = 7;
-const MOBILE_ITEM_WIDTH = 118;
+const VISIBLE_ON_MOBILE = 4;
 const DESKTOP_BREAKPOINT = 1024;
 
 export default function CategoryRow() {
@@ -52,8 +52,9 @@ export default function CategoryRow() {
   const availableWidth = containerWidth - 48; // minus the container's own px-6 padding
   const step = isDesktop
     ? availableWidth / VISIBLE_ON_DESKTOP
-    : MOBILE_ITEM_WIDTH + GAP;
+    : availableWidth / VISIBLE_ON_MOBILE;
   const itemWidth = step - GAP;
+  const circleSize = isDesktop ? CIRCLE_SIZE : Math.min(CIRCLE_SIZE, itemWidth);
   const trackWidth = CATEGORIES.length * step - GAP;
   const maxOffset = Math.min(0, availableWidth - trackWidth);
 
@@ -95,8 +96,8 @@ export default function CategoryRow() {
                   delay: i * 0.15,
                 }}
                 style={{
-                  width: CIRCLE_SIZE,
-                  height: CIRCLE_SIZE,
+                  width: circleSize,
+                  height: circleSize,
                   backgroundColor: "var(--brand)",
                 }}
                 className="relative shrink-0 overflow-hidden shadow-md transition-transform duration-300 hover:scale-105"
@@ -104,7 +105,7 @@ export default function CategoryRow() {
                 <div
                   style={{
                     position: "absolute",
-                    inset: 8,
+                    inset: circleSize < 90 ? 5 : 8,
                     borderRadius: "9999px",
                     overflow: "hidden",
                     backgroundColor: "white",
@@ -115,7 +116,7 @@ export default function CategoryRow() {
                     alt={cat.label}
                     fill
                     draggable={false}
-                    sizes="104px"
+                    sizes={`${Math.round(circleSize)}px`}
                     style={{ objectFit: "contain", padding: 4 }}
                   />
                 </div>
