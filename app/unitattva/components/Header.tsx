@@ -1,11 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, User, Heart, ShoppingBag } from "lucide-react";
 import { useCart } from "./CartContext";
 import { useWishlist } from "./WishlistContext";
+import SearchPanel from "./SearchPanel";
 
 const NAV_LINKS = [
   { label: "Home", href: "/unitattva" },
@@ -17,8 +19,10 @@ const NAV_LINKS = [
 export default function Header() {
   const { count } = useCart();
   const { count: wishlistCount } = useWishlist();
+  const [searchOpen, setSearchOpen] = useState(false);
 
   return (
+    <>
     <header className="sticky top-0 z-50 border-b border-black/5 bg-white/95 backdrop-blur">
       <div className="mx-auto flex w-full max-w-[1400px] items-center gap-6 px-6 py-4">
         <Link href="/unitattva" className="flex shrink-0 items-center">
@@ -47,6 +51,7 @@ export default function Header() {
         <div className="ml-auto flex items-center gap-2.5 lg:ml-0">
           <button
             type="button"
+            onClick={() => setSearchOpen(true)}
             aria-label="Search"
             className="flex h-10 w-10 items-center justify-center rounded-full bg-violet-100 text-violet-700 transition-transform hover:-translate-y-0.5"
           >
@@ -100,5 +105,8 @@ export default function Header() {
         </div>
       </div>
     </header>
+
+    <SearchPanel open={searchOpen} onClose={() => setSearchOpen(false)} />
+    </>
   );
 }
