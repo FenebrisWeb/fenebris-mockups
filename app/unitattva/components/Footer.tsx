@@ -22,7 +22,7 @@ export default function Footer() {
         <div className="flex flex-col gap-3">
           <span className="inline-flex w-fit items-center rounded-lg bg-white px-4 py-2.5">
             <Image
-              src="/unitattva/logo.PNG"
+              src="/unitattva/logo0.png"
               alt="UniTattva"
               width={160}
               height={48}

@@ -7,6 +7,9 @@ import VideoShowcase from "./components/VideoShowcase";
 import BestSellers from "./components/BestSellers";
 import TrustSection from "./components/TrustSection";
 import PremiumMasala from "./components/PremiumMasala";
+import WhySpices from "./components/WhySpices";
+import BlendedSpices from "./components/BlendedSpices";
+import PromoOffer from "./components/PromoOffer";
 import Footer from "./components/Footer";
 import { CartProvider } from "./components/CartContext";
 import { WishlistProvider } from "./components/WishlistContext";
@@ -32,6 +35,9 @@ export default function UnitattvaPage() {
             <BestSellers />
             <TrustSection />
             <PremiumMasala />
+            <WhySpices />
+            <BlendedSpices />
+            <PromoOffer />
           </main>
           <Footer />
         </WishlistProvider>

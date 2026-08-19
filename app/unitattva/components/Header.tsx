@@ -27,7 +27,7 @@ export default function Header() {
       <div className="mx-auto flex w-full max-w-[1400px] items-center gap-6 px-6 py-4">
         <Link href="/unitattva" className="flex shrink-0 items-center">
           <Image
-            src="/unitattva/logo.PNG"
+            src="/unitattva/logo0.png"
             alt="UniTattva"
             width={160}
             height={48}
