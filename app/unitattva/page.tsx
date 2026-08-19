@@ -25,8 +25,10 @@ export default function UnitattvaPage() {
     >
       <CartProvider>
         <WishlistProvider>
-          <TopBar />
-          <Header />
+          <div className="sticky top-0 z-50">
+            <TopBar />
+            <Header />
+          </div>
           <main className="flex flex-1 flex-col">
             <Hero />
             <Marquee />

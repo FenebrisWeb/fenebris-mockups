@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <>
-    <header className="sticky top-0 z-50 border-b border-black/5 bg-white/95 backdrop-blur">
+    <header className="border-b border-black/5 bg-white/95 backdrop-blur">
       <div className="mx-auto flex w-full max-w-[1400px] items-center gap-6 px-6 py-4">
         <Link href="/unitattva" className="flex shrink-0 items-center">
           <Image
