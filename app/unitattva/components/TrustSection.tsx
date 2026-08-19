@@ -1,43 +1,73 @@
-import { Leaf } from "lucide-react";
+import { Sprout, FlaskConical, ShieldCheck } from "lucide-react";
 import FadeUp from "./FadeUp";
+import TrustBadge from "./TrustBadge";
+
+const TRUST_POINTS = [
+  { label: "Single-Origin Sourced", icon: Sprout },
+  { label: "Lab-Tested Purity", icon: FlaskConical },
+  { label: "FSSAI Certified", icon: ShieldCheck },
+];
 
 export default function TrustSection() {
   return (
     <section className="bg-white py-10 sm:py-16">
       <div className="mx-auto w-full max-w-[1400px] px-6">
-        <div className="relative flex items-center">
-          <div className="relative z-10 hidden shrink-0 items-center justify-center sm:flex sm:w-40 lg:w-56">
-            <Leaf
-              className="h-32 w-32 -rotate-12 text-[var(--brand)] drop-shadow-lg lg:h-44 lg:w-44"
-              strokeWidth={1.1}
-              fill="var(--brand)"
-              fillOpacity={0.15}
-            />
-          </div>
+        <FadeUp className="relative overflow-hidden rounded-3xl bg-[var(--brand)] shadow-xl">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 opacity-[0.07] [background-image:radial-gradient(#fff_1px,transparent_1px)] [background-size:18px_18px]"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-white/5 blur-2xl"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -bottom-20 left-1/3 h-72 w-72 rounded-full bg-black/10 blur-2xl"
+          />
 
-          <FadeUp className="relative -ml-0 flex-1 overflow-hidden rounded-2xl bg-[var(--brand)] px-8 py-10 text-white shadow-lg sm:-ml-16 sm:py-12 lg:-ml-24 lg:px-16">
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 opacity-[0.08] [background-image:radial-gradient(#fff_1px,transparent_1px)] [background-size:18px_18px]"
-            />
-            <div className="relative flex flex-col gap-4">
+          <div className="relative grid grid-cols-1 items-center gap-10 px-6 py-12 sm:px-10 sm:py-14 lg:grid-cols-[1.3fr_0.7fr] lg:gap-12 lg:px-16 lg:py-16">
+            <div className="flex flex-col items-start gap-4 text-left text-white">
+              <span className="rounded-full bg-white/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em]">
+                Our Promise
+              </span>
+
               <h2 className="font-serif text-2xl leading-snug tracking-tight sm:text-3xl lg:text-4xl">
                 Why We Are the Most Trusted Spices Brand of India?
               </h2>
-              <p className="text-base font-semibold text-white/90 sm:text-lg">
-                The promise of purity, in every single pack.
-              </p>
-              <p className="max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">
+
+              <span className="h-1 w-16 rounded-full bg-white/60" />
+
+              <p className="max-w-xl text-sm leading-relaxed text-white/85 sm:text-base">
                 We are single-origin sourced and lab-tested at every step, so
                 every pack of Unitattva reaches you the way it should, pure,
-                aromatic, and free of fillers or artificial colors. Wholeheartedly
-                invested in quality over quantity, our FSSAI-certified
-                facilities and eco-friendly packaging ensure you get real
-                flavor, not shortcuts.
+                aromatic, and free of fillers or artificial colors.
+                Wholeheartedly invested in quality over quantity, our
+                FSSAI-certified facilities and eco-friendly packaging ensure
+                you get real flavor, not shortcuts.
               </p>
+
+              <div className="mt-2 flex flex-wrap gap-3">
+                {TRUST_POINTS.map((point) => {
+                  const Icon = point.icon;
+                  return (
+                    <span
+                      key={point.label}
+                      className="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold sm:text-sm"
+                    >
+                      <Icon className="h-4 w-4 shrink-0" strokeWidth={1.75} />
+                      {point.label}
+                    </span>
+                  );
+                })}
+              </div>
             </div>
-          </FadeUp>
-        </div>
+
+            <div className="relative hidden items-center justify-center lg:flex">
+              <TrustBadge />
+            </div>
+          </div>
+        </FadeUp>
       </div>
     </section>
   );
