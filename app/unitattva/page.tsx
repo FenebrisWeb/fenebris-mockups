@@ -4,7 +4,9 @@ import Hero from "./components/Hero";
 import Marquee from "./components/Marquee";
 import CategoryRow from "./components/CategoryRow";
 import VideoShowcase from "./components/VideoShowcase";
+import BestSellers from "./components/BestSellers";
 import TrustSection from "./components/TrustSection";
+import PremiumMasala from "./components/PremiumMasala";
 import Footer from "./components/Footer";
 import { CartProvider } from "./components/CartContext";
 import { WishlistProvider } from "./components/WishlistContext";
@@ -27,7 +29,9 @@ export default function UnitattvaPage() {
             <Marquee />
             <CategoryRow />
             <VideoShowcase />
+            <BestSellers />
             <TrustSection />
+            <PremiumMasala />
           </main>
           <Footer />
         </WishlistProvider>

@@ -6,6 +6,10 @@ export type Product = {
   compareAt: number | null;
   weight: string;
   image: string | null;
+  // Placeholder ratings for mockup purposes — swap for real review data
+  // once it's available.
+  rating: number;
+  reviewCount: number;
 };
 
 export const PRODUCTS: Product[] = [
@@ -17,6 +21,8 @@ export const PRODUCTS: Product[] = [
     compareAt: null,
     weight: "Combo Pack",
     image: "https://cdn.shopify.com/s/files/1/0782/2413/0298/files/DreamCombo.jpg?v=1771312585",
+    rating: 4.6,
+    reviewCount: 42,
   },
   {
     handle: "green-cardamom-supreme-premium-whole-elaichi-pods-aromatic-fresh-spice-for-tea-desserts-curries-baking",
@@ -26,6 +32,8 @@ export const PRODUCTS: Product[] = [
     compareAt: 1513,
     weight: "250g",
     image: "https://cdn.shopify.com/s/files/1/0782/2413/0298/files/GreenCardamomSeeds.png?v=1765013369",
+    rating: 4.8,
+    reviewCount: 96,
   },
   {
     handle: "jaljeera-premix-instant-refreshing-drink-mix",
@@ -35,6 +43,8 @@ export const PRODUCTS: Product[] = [
     compareAt: 300,
     weight: "250g",
     image: "https://cdn.shopify.com/s/files/1/0782/2413/0298/files/Untitleddesign_18.jpg?v=1784624939",
+    rating: 4.4,
+    reviewCount: 28,
   },
   {
     handle: "kasoori-methi-premium-dried-fenugreek-leaves",
@@ -44,6 +54,8 @@ export const PRODUCTS: Product[] = [
     compareAt: null,
     weight: "250g",
     image: "https://cdn.shopify.com/s/files/1/0782/2413/0298/files/KasooriMethi.jpg?v=1777551688",
+    rating: 4.5,
+    reviewCount: 34,
   },
   {
     handle: "paratha-masala-authentic-spice-blend-for-tasty-parathas",
@@ -53,6 +65,8 @@ export const PRODUCTS: Product[] = [
     compareAt: null,
     weight: "250g",
     image: "https://cdn.shopify.com/s/files/1/0782/2413/0298/files/paranthamasala2.png?v=1784625976",
+    rating: 4.3,
+    reviewCount: 19,
   },
   {
     handle: "thandai-premix-instant-traditional-milk-drink-mix",
@@ -62,6 +76,8 @@ export const PRODUCTS: Product[] = [
     compareAt: 400,
     weight: "250g",
     image: "https://cdn.shopify.com/s/files/1/0782/2413/0298/files/Untitleddesign_21.jpg?v=1784628848",
+    rating: 4.7,
+    reviewCount: 61,
   },
   {
     handle: "unitattva-anda-curry-masala-authentic-indian-egg-curry-spice-blend",
@@ -71,6 +87,8 @@ export const PRODUCTS: Product[] = [
     compareAt: 380,
     weight: "250g",
     image: "https://cdn.shopify.com/s/files/1/0782/2413/0298/files/AN1.jpg?v=1784631530",
+    rating: 4.5,
+    reviewCount: 23,
   },
   {
     handle: "unitattva-biryani-masala-premium-aromatic-spice-blend-for-perfect-biryani",
@@ -80,6 +98,8 @@ export const PRODUCTS: Product[] = [
     compareAt: 370,
     weight: "250g",
     image: "https://cdn.shopify.com/s/files/1/0782/2413/0298/files/B1.jpg?v=1784631479",
+    rating: 4.9,
+    reviewCount: 128,
   },
   {
     handle: "unitattva-chicken-masala-premium-non-veg-spice-blend-for-rich-flavorful-chicken-curries-authentic-taste-strong-aroma",
@@ -89,6 +109,8 @@ export const PRODUCTS: Product[] = [
     compareAt: 479,
     weight: "250g",
     image: "https://cdn.shopify.com/s/files/1/0782/2413/0298/files/Chickenmasala.png?v=1764218489",
+    rating: 4.6,
+    reviewCount: 57,
   },
   {
     handle: "unitattva-dal-makhani-masala-authentic-creamy-dal-flavor-premium-aromatic-spice-blend-restaurant-style-taste-at-home",
@@ -98,5 +120,7 @@ export const PRODUCTS: Product[] = [
     compareAt: 315,
     weight: "250g",
     image: null,
+    rating: 4.4,
+    reviewCount: 15,
   },
 ];

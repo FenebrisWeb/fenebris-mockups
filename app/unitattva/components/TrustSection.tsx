@@ -10,7 +10,7 @@ const TRUST_POINTS = [
 
 export default function TrustSection() {
   return (
-    <section className="bg-white py-10 sm:py-16">
+    <section className="bg-white py-6 sm:py-8">
       <div className="mx-auto w-full max-w-[1400px] px-6">
         <FadeUp className="relative overflow-hidden rounded-3xl bg-[var(--brand)] shadow-xl">
           <div
@@ -26,7 +26,7 @@ export default function TrustSection() {
             className="pointer-events-none absolute -bottom-20 left-1/3 h-72 w-72 rounded-full bg-black/10 blur-2xl"
           />
 
-          <div className="relative grid grid-cols-1 items-center gap-10 px-6 py-12 sm:px-10 sm:py-14 lg:grid-cols-[1.3fr_0.7fr] lg:gap-12 lg:px-16 lg:py-16">
+          <div className="relative grid grid-cols-1 items-center gap-10 px-6 py-8 sm:px-10 sm:py-10 lg:grid-cols-[1.3fr_0.7fr] lg:gap-12 lg:px-16 lg:py-12">
             <div className="flex flex-col items-start gap-4 text-left text-white">
               <span className="rounded-full bg-white/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em]">
                 Our Promise
