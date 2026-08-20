@@ -2,6 +2,7 @@ import TopBar from "./components/TopBar";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Solutions from "./components/Solutions";
+import Transformations from "./components/Transformations";
 import Footer from "./components/Footer";
 
 // Wigomania V2 brand palette — muted gold, matched from the reference design.
@@ -19,6 +20,7 @@ export default function WigomaniaPage() {
       <main className="flex flex-1 flex-col">
         <Hero />
         <Solutions />
+        <Transformations />
       </main>
       <Footer />
     </div>
