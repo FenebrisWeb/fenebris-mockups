@@ -2,6 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
+    // Next 16 defaults `images.qualities` to [75] and silently coerces any
+    // other `quality` prop down to it — that's what was flattening the
+    // wigomaniav2 hero banners. Allow the higher tiers we actually use.
+    qualities: [75, 90, 100],
     remotePatterns: [
       {
         protocol: "https",
