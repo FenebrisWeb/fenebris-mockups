@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Solutions from "./components/Solutions";
 import Transformations from "./components/Transformations";
+import Reviews from "./components/Reviews";
 import Footer from "./components/Footer";
 
 // Wigomania V2 brand palette — muted gold, matched from the reference design.
@@ -21,6 +22,7 @@ export default function WigomaniaPage() {
         <Hero />
         <Solutions />
         <Transformations />
+        <Reviews />
       </main>
       <Footer />
     </div>
