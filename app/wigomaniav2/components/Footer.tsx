@@ -87,7 +87,7 @@ export default function Footer() {
     <footer className="border-t border-black/10">
       {/* Top stats bar */}
       <div className="bg-zinc-950 text-white">
-        <div className="mx-auto flex w-full max-w-[1400px] snap-x snap-mandatory gap-x-8 overflow-x-auto px-6 py-5 sm:flex-nowrap sm:snap-none sm:justify-between sm:overflow-visible lg:divide-x lg:divide-white/10">
+        <FadeUp className="mx-auto flex w-full max-w-[1400px] snap-x snap-mandatory gap-x-8 overflow-x-auto px-6 py-5 sm:flex-nowrap sm:snap-none sm:justify-between sm:overflow-visible lg:divide-x lg:divide-white/10">
           {TOP_STATS.map((stat) => {
             const Icon = stat.icon;
             return (
@@ -103,13 +103,13 @@ export default function Footer() {
               </div>
             );
           })}
-        </div>
+        </FadeUp>
       </div>
 
       {/* CTA bar */}
       <div className="relative overflow-hidden bg-[var(--brand)]">
         <PatternOverlay />
-        <div className="relative mx-auto flex w-full max-w-[1400px] flex-col items-center justify-between gap-4 px-6 py-5 text-white sm:flex-row">
+        <FadeUp className="relative mx-auto flex w-full max-w-[1400px] flex-col items-center justify-between gap-4 px-6 py-5 text-white sm:flex-row">
           <div className="flex items-center gap-4 text-center sm:text-left">
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/15">
               <Phone className="h-5 w-5" strokeWidth={1.75} />
@@ -129,7 +129,7 @@ export default function Footer() {
             Enquire Now
             <ChevronRight className="h-4 w-4" strokeWidth={2} />
           </a>
-        </div>
+        </FadeUp>
       </div>
 
       {/* Main footer */}
@@ -218,9 +218,11 @@ export default function Footer() {
 
         <div className="border-t border-white/10">
           <div className="mx-auto w-full max-w-[1400px] px-6 py-10">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--brand)]">
-              Trusted by Thousands
-            </span>
+            <FadeUp>
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--brand)]">
+                Trusted by Thousands
+              </span>
+            </FadeUp>
             <div className="mt-5 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 sm:grid sm:grid-cols-4 sm:snap-none sm:overflow-visible sm:pb-0">
               {TRUST_BADGES.map((badge, i) => {
                 const Icon = badge.icon;
@@ -243,7 +245,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10">
-          <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center justify-between gap-4 px-6 py-6 text-center text-xs text-white/50 sm:flex-row sm:text-left">
+          <FadeUp className="mx-auto flex w-full max-w-[1400px] flex-col items-center justify-between gap-4 px-6 py-6 text-center text-xs text-white/50 sm:flex-row sm:text-left">
             <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
               <span>{"©"} 2026 Wig O Mania. All Rights Reserved.</span>
               <span className="hidden sm:inline">|</span>
@@ -270,7 +272,7 @@ export default function Footer() {
                 ))}
               </div>
             </div>
-          </div>
+          </FadeUp>
         </div>
       </div>
     </footer>
