@@ -139,7 +139,7 @@ export default function Transformations() {
 
             <a
               href="#appointment"
-              className="inline-flex h-12 w-fit items-center justify-center gap-2 rounded-md bg-black px-7 text-xs font-bold uppercase tracking-[0.12em] text-white transition-opacity hover:opacity-90"
+              className="inline-flex h-12 w-fit items-center justify-center gap-2 rounded-md bg-black px-7 text-xs font-bold uppercase tracking-[0.12em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--brand)] hover:shadow-md"
             >
               Book Your Transformation
               <span aria-hidden>→</span>

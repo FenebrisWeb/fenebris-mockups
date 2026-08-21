@@ -95,7 +95,7 @@ export default function Header() {
           ))}
           <a
             href="#appointment"
-            className="mt-2 flex h-11 items-center justify-center rounded-full bg-[var(--brand)] text-[13px] font-semibold uppercase tracking-wide text-white"
+            className="mt-2 flex h-11 items-center justify-center rounded-full bg-[var(--brand)] text-[13px] font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--brand-dark)] hover:shadow-md"
           >
             Book Consultation
           </a>

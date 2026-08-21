@@ -124,7 +124,7 @@ export default function Footer() {
 
           <a
             href="#appointment"
-            className="flex h-11 shrink-0 items-center gap-1.5 rounded-full border-2 border-white px-6 text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-white hover:text-[var(--brand)]"
+            className="flex h-11 shrink-0 items-center gap-1.5 rounded-full border-2 border-white px-6 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-[var(--brand)] hover:shadow-md"
           >
             Enquire Now
             <ChevronRight className="h-4 w-4" strokeWidth={2} />

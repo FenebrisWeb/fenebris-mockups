@@ -78,14 +78,14 @@ function HeroContent({ slide, active, card }: { slide: Slide; active: number; ca
         <div className={`mt-2 flex flex-col gap-4 sm:flex-row ${card ? "items-center" : "items-stretch"}`}>
           <a
             href="#appointment"
-            className="flex h-12 items-center justify-center gap-2 rounded-md bg-[var(--brand)] px-7 text-xs font-bold uppercase tracking-[0.12em] text-white transition-opacity hover:opacity-90"
+            className="flex h-12 items-center justify-center gap-2 rounded-md bg-[var(--brand)] px-7 text-xs font-bold uppercase tracking-[0.12em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--brand-dark)] hover:shadow-md"
           >
             Book Consultation
             <span aria-hidden>→</span>
           </a>
           <a
             href="#services"
-            className="flex h-12 items-center justify-center gap-2 rounded-md border-2 border-[var(--brand)] px-7 text-xs font-bold uppercase tracking-[0.12em] text-[var(--brand)] transition-colors hover:bg-[var(--brand)] hover:text-white"
+            className="flex h-12 items-center justify-center gap-2 rounded-md border-2 border-[var(--brand)] px-7 text-xs font-bold uppercase tracking-[0.12em] text-[var(--brand)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--brand)] hover:text-white hover:shadow-md"
           >
             Explore Collections
             <span aria-hidden>→</span>

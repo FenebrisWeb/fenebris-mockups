@@ -91,7 +91,7 @@ export default function ContactSupport() {
                 </div>
                 <a
                   href={channel.href}
-                  className="mt-3 flex h-11 w-full items-center justify-center rounded-md bg-black px-6 text-xs font-bold uppercase tracking-[0.1em] text-white transition-opacity hover:opacity-90"
+                  className="mt-3 flex h-11 w-full items-center justify-center rounded-md bg-black px-6 text-xs font-bold uppercase tracking-[0.1em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--brand)] hover:shadow-md"
                 >
                   {channel.cta}
                 </a>
