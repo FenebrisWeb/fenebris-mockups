@@ -9,6 +9,7 @@ import Solutions from "./components/Solutions";
 import Transformations from "./components/Transformations";
 import Reviews from "./components/Reviews";
 import WhyChooseUs from "./components/WhyChooseUs";
+import About from "./components/About";
 import Footer from "./components/Footer";
 
 // Wigomania V2 brand palette — muted gold, matched from the reference design.
@@ -48,6 +49,7 @@ export default function WigomaniaPage() {
           <Transformations />
           <Reviews />
           <WhyChooseUs />
+          <About />
         </main>
         <Footer />
       </SmoothScroll>
