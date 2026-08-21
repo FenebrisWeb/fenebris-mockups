@@ -1,17 +1,4 @@
-import {
-  Mail,
-  MapPin,
-  Phone,
-  MessageCircle,
-  ShieldCheck,
-  Award,
-  Users,
-  HeartHandshake,
-  Gem,
-  Handshake,
-  ChevronRight,
-} from "lucide-react";
-import PatternOverlay from "./PatternOverlay";
+import { Mail, MapPin, Phone, MessageCircle } from "lucide-react";
 import FadeUp from "./FadeUp";
 
 function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -44,16 +31,12 @@ const LINK_COLUMNS = [
     links: ["Women's Wigs", "Men's Hair Systems", "Hair Extensions", "Hair Toppers", "Accessories", "Aftercare Products"],
   },
   {
-    heading: "About",
-    links: ["About Us", "Our Story", "Why Choose Us", "Client Stories", "Careers"],
+    heading: "Support",
+    links: ["FAQs", "Shipping & Delivery", "Returns & Refunds", "Track Your Order", "Product Care Guides", "Contact Us"],
   },
   {
-    heading: "Help",
-    links: ["FAQs", "Hair Care Guide", "How to Order", "Shipping & Delivery", "Returns & Refunds", "Track Your Order"],
-  },
-  {
-    heading: "Franchise",
-    links: ["Franchise Overview", "Benefits", "Investment Details", "Enquiry Form"],
+    heading: "Company",
+    links: ["About Us", "Our Story", "Careers", "Client Stories", "Terms & Conditions", "Privacy Policy"],
   },
 ];
 
@@ -61,219 +44,108 @@ const SOCIALS = [
   { label: "Instagram", href: "#", icon: InstagramIcon },
   { label: "Facebook", href: "#", icon: FacebookIcon },
   { label: "YouTube", href: "#", icon: YoutubeIcon },
-  { label: "WhatsApp", href: "#", icon: MessageCircle },
+  { label: "WhatsApp", href: "https://wa.me/919940155566", icon: MessageCircle },
 ];
 
-const TRUST_BADGES = [
-  { label: "Premium Human Hair", value: "100%", icon: ShieldCheck },
-  { label: "of Expertise", value: "30+ Years", icon: Award },
-  { label: "Happy Clients", value: "10,000+", icon: Users },
-  { label: "Care & Support", value: "Lifetime", icon: HeartHandshake },
-];
-
-const TOP_STATS = [
-  { label: "Happy Clients", value: "10,000+", icon: Users },
-  { label: "Of Expertise", value: "30+ Years", icon: Award },
-  { label: "Human Hair", value: "100% Premium", icon: Gem },
-  { label: "One Time Investment", value: "No Royalty", icon: ShieldCheck },
-  { label: "We Grow Together", value: "Lifetime Support", icon: Handshake },
-];
-
-const LEGAL_LINKS = ["Privacy Policy", "Terms & Conditions", "Disclaimer", "Sitemap"];
 const PAYMENT_METHODS = ["VISA", "Mastercard", "UPI", "RuPay"];
 
 export default function Footer() {
   return (
-    <footer className="border-t border-black/10">
-      {/* Top stats bar */}
-      <div className="bg-zinc-950 text-white">
-        <FadeUp className="mx-auto flex w-full max-w-[1400px] snap-x snap-mandatory gap-x-8 overflow-x-auto px-6 py-5 sm:flex-nowrap sm:snap-none sm:justify-between sm:overflow-visible lg:divide-x lg:divide-white/10">
-          {TOP_STATS.map((stat) => {
-            const Icon = stat.icon;
-            return (
-              <div
-                key={stat.label}
-                className="flex shrink-0 snap-center items-center gap-3 px-2 first:pl-0 sm:shrink"
-              >
-                <Icon className="h-6 w-6 shrink-0 text-[var(--brand)]" strokeWidth={1.5} />
-                <div className="flex flex-col whitespace-nowrap leading-tight">
-                  <span className="text-sm font-bold uppercase tracking-wide">{stat.value}</span>
-                  <span className="text-xs text-white/60">{stat.label}</span>
-                </div>
-              </div>
-            );
-          })}
-        </FadeUp>
-      </div>
-
-      {/* CTA bar */}
-      <div className="relative overflow-hidden bg-[var(--brand)]">
-        <PatternOverlay />
-        <FadeUp className="relative mx-auto flex w-full max-w-[1400px] flex-col items-center justify-between gap-4 px-6 py-5 text-white sm:flex-row">
-          <div className="flex items-center gap-4 text-center sm:text-left">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/15">
-              <Phone className="h-5 w-5" strokeWidth={1.75} />
+    <footer className="bg-zinc-950 text-white">
+      <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 gap-12 px-6 py-16 sm:px-10 lg:grid-cols-[1.3fr_1fr_1fr_1fr_1.1fr] lg:gap-8 lg:px-16">
+        <FadeUp className="flex flex-col gap-4">
+          <span className="flex flex-col leading-none">
+            <span className="font-[family-name:var(--font-cormorant)] text-[26px] font-bold tracking-[0.02em] text-white">
+              WIG<span className="text-[var(--brand)]">O</span>MANIA
             </span>
-            <div>
-              <p className="text-base font-semibold">Let&apos;s build success together!</p>
-              <p className="text-sm text-white/80">
-                Enquire today and our team will get in touch with you.
-              </p>
-            </div>
+            <span className="mt-1.5 flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.3em] text-white/50">
+              <span className="h-px w-4 bg-white/30" />
+              Confidence. Always.
+              <span className="h-px w-4 bg-white/30" />
+            </span>
+          </span>
+          <p className="max-w-xs text-sm leading-relaxed text-white/60">
+            India&apos;s most trusted hair solutions brand. Helping thousands look and feel their
+            best every single day.
+          </p>
+
+          <div className="mt-1 flex items-center gap-3">
+            {SOCIALS.map((social) => {
+              const Icon = social.icon;
+              return (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  aria-label={social.label}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-[var(--brand)] hover:bg-[var(--brand)] hover:text-white"
+                >
+                  <Icon className="h-4 w-4" strokeWidth={1.75} />
+                </a>
+              );
+            })}
+          </div>
+        </FadeUp>
+
+        {LINK_COLUMNS.map((col, i) => (
+          <FadeUp key={col.heading} delay={(i + 1) * 0.08} className="flex flex-col gap-3">
+            <span className="text-sm font-bold uppercase tracking-[0.15em] text-[var(--brand)]">
+              {col.heading}
+            </span>
+            {col.links.map((link) => (
+              <a
+                key={link}
+                href="#"
+                className="text-sm text-white/60 transition-colors hover:text-white"
+              >
+                {link}
+              </a>
+            ))}
+          </FadeUp>
+        ))}
+
+        <FadeUp delay={0.32} className="flex flex-col gap-3">
+          <span className="text-sm font-bold uppercase tracking-[0.15em] text-[var(--brand)]">
+            Contact Us
+          </span>
+
+          <div className="flex items-start gap-3">
+            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[var(--brand)]" strokeWidth={1.75} />
+            <p className="text-sm leading-relaxed text-white/60">
+              Wig O Mania Studio, Nungambakkam,
+              <br />
+              Chennai - 600034, Tamil Nadu, India
+            </p>
           </div>
 
-          <a
-            href="#appointment"
-            className="flex h-11 shrink-0 items-center gap-1.5 rounded-full border-2 border-white px-6 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-[var(--brand)] hover:shadow-md"
-          >
-            Enquire Now
-            <ChevronRight className="h-4 w-4" strokeWidth={2} />
+          <a href="tel:+914442146666" className="flex items-center gap-3 text-sm text-white/60 transition-colors hover:text-white">
+            <Phone className="h-4 w-4 shrink-0 text-[var(--brand)]" strokeWidth={1.75} />
+            +91 44 4214 6666
+          </a>
+          <a href="tel:+919940155566" className="flex items-center gap-3 text-sm text-white/60 transition-colors hover:text-white">
+            <Phone className="h-4 w-4 shrink-0 text-[var(--brand)]" strokeWidth={1.75} />
+            +91 99401 55566
+          </a>
+          <a href="mailto:info@wigomania.com" className="flex items-center gap-3 text-sm text-white/60 transition-colors hover:text-white">
+            <Mail className="h-4 w-4 shrink-0 text-[var(--brand)]" strokeWidth={1.75} />
+            info@wigomania.com
           </a>
         </FadeUp>
       </div>
 
-      {/* Main footer */}
-      <div className="bg-zinc-950 text-white">
-        <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 gap-12 px-6 py-16 lg:grid-cols-[1.2fr_1fr_1fr_1fr_1fr_1.1fr] lg:gap-8">
-          <FadeUp className="flex flex-col gap-4 lg:col-span-1">
-            <span className="flex flex-col leading-none">
-              <span className="font-[family-name:var(--font-cormorant)] text-[26px] font-bold tracking-[0.02em] text-white">
-                WIG<span className="text-[var(--brand)]">O</span>MANIA
+      <div className="border-t border-white/10">
+        <FadeUp className="mx-auto flex w-full max-w-[1400px] flex-col items-center justify-between gap-4 px-6 py-6 text-center text-xs text-white/50 sm:flex-row sm:px-10 sm:text-left lg:px-16">
+          <span>{"©"} 2024 Wig O Mania. All Rights Reserved.</span>
+          <div className="flex items-center gap-1.5">
+            {PAYMENT_METHODS.map((method) => (
+              <span
+                key={method}
+                className="rounded border border-white/15 bg-white/5 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white/70"
+              >
+                {method}
               </span>
-              <span className="mt-1.5 flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.3em] text-white/50">
-                <span className="h-px w-4 bg-white/30" />
-                Confidence. Always.
-                <span className="h-px w-4 bg-white/30" />
-              </span>
-            </span>
-            <p className="max-w-xs text-sm leading-relaxed text-white/60">
-              India&apos;s most trusted hair solutions brand. Helping
-              thousands look and feel their best every single day.
-            </p>
-
-            <div className="mt-1 flex items-center gap-3">
-              {SOCIALS.map((social) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    aria-label={social.label}
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-[var(--brand)] hover:bg-[var(--brand)] hover:text-white"
-                  >
-                    <Icon className="h-4 w-4" strokeWidth={1.75} />
-                  </a>
-                );
-              })}
-            </div>
-          </FadeUp>
-
-          {LINK_COLUMNS.map((col, i) => (
-            <FadeUp key={col.heading} delay={(i + 1) * 0.08} className="flex flex-col gap-3">
-              <span className="text-sm font-bold uppercase tracking-[0.15em] text-[var(--brand)]">
-                {col.heading}
-              </span>
-              <span className="h-px w-6 bg-[var(--brand)]/40" />
-              {col.links.map((link) => (
-                <a
-                  key={link}
-                  href="#"
-                  className="text-sm text-white/60 transition-colors hover:text-white"
-                >
-                  {link}
-                </a>
-              ))}
-            </FadeUp>
-          ))}
-
-          <FadeUp delay={0.4} className="flex flex-col gap-4">
-            <span className="text-sm font-bold uppercase tracking-[0.15em] text-[var(--brand)]">
-              Contact Us
-            </span>
-            <span className="h-px w-6 bg-[var(--brand)]/40" />
-
-            <div className="flex items-start gap-3">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[var(--brand)]" strokeWidth={1.75} />
-              <p className="text-sm leading-relaxed text-white/60">
-                Wig O Mania Studio, Nungambakkam,
-                <br />
-                Chennai, 600034, Tamil Nadu, India
-              </p>
-            </div>
-
-            <a href="tel:+914442146666" className="flex items-center gap-3 text-sm text-white/60 transition-colors hover:text-white">
-              <Phone className="h-4 w-4 shrink-0 text-[var(--brand)]" strokeWidth={1.75} />
-              +91 44 4214 6666
-            </a>
-            <a href="https://wa.me/919940155566" className="flex items-center gap-3 text-sm text-white/60 transition-colors hover:text-white">
-              <MessageCircle className="h-4 w-4 shrink-0 text-[var(--brand)]" strokeWidth={1.75} />
-              +91 99401 55566
-            </a>
-            <a href="mailto:info@wigomania.com" className="flex items-center gap-3 text-sm text-white/60 transition-colors hover:text-white">
-              <Mail className="h-4 w-4 shrink-0 text-[var(--brand)]" strokeWidth={1.75} />
-              info@wigomania.com
-            </a>
-          </FadeUp>
-        </div>
-
-        <div className="border-t border-white/10">
-          <div className="mx-auto w-full max-w-[1400px] px-6 py-10">
-            <FadeUp>
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--brand)]">
-                Trusted by Thousands
-              </span>
-            </FadeUp>
-            <div className="mt-5 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 sm:grid sm:grid-cols-4 sm:snap-none sm:overflow-visible sm:pb-0">
-              {TRUST_BADGES.map((badge, i) => {
-                const Icon = badge.icon;
-                return (
-                  <FadeUp
-                    key={badge.label}
-                    delay={i * 0.06}
-                    className="flex w-[62vw] max-w-[220px] shrink-0 snap-center flex-col items-start gap-2 rounded-2xl border border-white/10 bg-white/[.03] p-5 transition-colors hover:border-[var(--brand)]/40 sm:w-auto sm:max-w-none sm:shrink"
-                  >
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--brand)]/10 text-[var(--brand)]">
-                      <Icon className="h-5 w-5" strokeWidth={1.5} />
-                    </span>
-                    <span className="text-base font-bold leading-tight">{badge.value}</span>
-                    <span className="text-xs leading-tight text-white/50">{badge.label}</span>
-                  </FadeUp>
-                );
-              })}
-            </div>
+            ))}
           </div>
-        </div>
-
-        <div className="border-t border-white/10">
-          <FadeUp className="mx-auto flex w-full max-w-[1400px] flex-col items-center justify-between gap-4 px-6 py-6 text-center text-xs text-white/50 sm:flex-row sm:text-left">
-            <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
-              <span>{"©"} 2026 Wig O Mania. All Rights Reserved.</span>
-              <span className="hidden sm:inline">|</span>
-              {LEGAL_LINKS.map((label, i) => (
-                <span key={label} className="flex items-center gap-2">
-                  <a href="#" className="transition-colors hover:text-white">
-                    {label}
-                  </a>
-                  {i < LEGAL_LINKS.length - 1 && <span>|</span>}
-                </span>
-              ))}
-            </div>
-
-            <div className="flex items-center gap-3">
-              <span>Secured Payments By</span>
-              <div className="flex items-center gap-1.5">
-                {PAYMENT_METHODS.map((method) => (
-                  <span
-                    key={method}
-                    className="rounded border border-white/15 bg-white/5 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white/70"
-                  >
-                    {method}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </FadeUp>
-        </div>
+        </FadeUp>
       </div>
     </footer>
   );
