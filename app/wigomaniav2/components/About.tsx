@@ -49,14 +49,14 @@ function AboutContent({ card }: { card?: boolean }) {
 export default function About() {
   return (
     <section className="bg-[#fbf7f4]">
-      <div className="relative aspect-[4/5] w-full overflow-hidden sm:aspect-[16/9] lg:aspect-[2.5/1]">
+      <div className="group relative aspect-[4/5] w-full overflow-hidden sm:aspect-[16/9] lg:aspect-[2.5/1]">
         <Image
           src="/wigomaniaV2/aboutus.png"
           alt="Wig O Mania studio reception"
           fill
           quality={100}
           sizes="100vw"
-          className="object-cover object-[75%_center] sm:object-[68%_center] lg:object-center"
+          className="object-cover object-[75%_center] transition-transform duration-[4000ms] ease-in-out group-hover:scale-110 sm:object-[68%_center] lg:object-center"
         />
 
         {/* Desktop/tablet: text overlays the image directly */}
