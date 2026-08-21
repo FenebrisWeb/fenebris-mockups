@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import SmoothScroll from "./components/SmoothScroll";
 import TopBar from "./components/TopBar";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -11,20 +15,40 @@ const BRAND = "#B4915A";
 const BRAND_DARK = "#8F7040";
 
 export default function WigomaniaPage() {
+  const headerRef = useRef<HTMLDivElement>(null);
+  const [headerHeight, setHeaderHeight] = useState(0);
+
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+    const measure = () => setHeaderHeight(el.offsetHeight);
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
   return (
     <div
       className="flex flex-1 flex-col"
       style={{ "--brand": BRAND, "--brand-dark": BRAND_DARK } as React.CSSProperties}
     >
-      <TopBar />
-      <Header />
-      <main className="flex flex-1 flex-col">
-        <Hero />
-        <Solutions />
-        <Transformations />
-        <Reviews />
-      </main>
-      <Footer />
+      {/* Kept outside SmoothScroll's virtual-scroll layer so Header's `sticky` still
+         works against the real page scroll. */}
+      <div ref={headerRef}>
+        <TopBar />
+        <Header />
+      </div>
+
+      <SmoothScroll topOffset={headerHeight}>
+        <main className="flex flex-1 flex-col">
+          <Hero />
+          <Solutions />
+          <Transformations />
+          <Reviews />
+        </main>
+        <Footer />
+      </SmoothScroll>
     </div>
   );
 }
